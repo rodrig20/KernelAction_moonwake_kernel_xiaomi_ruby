@@ -19,9 +19,22 @@ jobs:
         with:
           to-who: '${{ secrets.TELEGRAM_API_TO_WHO }}'
           message: |
-            MoonWake at 27:00
             **MoonWake at 27:00**
-            [MoonWake at 27:00](https://example.com/)
+
+            📊 **Workflow Infomations:**
+            - **Status:** ${{ github.action_status }}
+            - **Attempt:** ${{ github.run_attempt }}
+            - **Run Number:** #${{ github.run_number }}
+            - **Run ID:** ${{ github.run_id }}
+            - **Actor:** ${{ github.actor }}
+            - **Original Actor:** ${{ github.github.triggering_actor }}
+            - **Workflow SHA:** ${{ github.sha }}
+            - **Workflow Link:** [click here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+            📄 **Notes:**
+            - You're RESPONSIBLE for EVERY DAMAGE, if you flash this ${{ github.event.inputs.config_type }} build.
+            - [Step to flash MoonWake in AOSP](https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby/wiki/Flash-MoonWake-on-AOSP)
+            - [Step to flash MoonWake in HyperOS/MIUI](https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby/wiki/Flash-MoonWake-on-MIUI-HyperOS)
           files: |
             LICENSE
             README.md
