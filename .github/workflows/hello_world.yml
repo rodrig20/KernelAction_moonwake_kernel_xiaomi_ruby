@@ -18,7 +18,11 @@ jobs:
         uses: xz-dev/TelegramFileUploader@v1.1.1
         with:
           to-who: '${{ secrets.TELEGRAM_API_TO_WHO }}'
-          message: "MoonWake at 27:00"
+          message: |
+            MoonWake at 27:00
+            *MoonWake at 27:00*
+            **MoonWake at 27:00**
+            [MoonWake at 27:00](https://example.com/)
           files: |
             LICENSE
             README.md
