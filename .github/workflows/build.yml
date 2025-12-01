@@ -444,10 +444,17 @@ jobs:
     env:
       buildfile: "${{ needs.Set-repos.outputs.buildfile }}"
     steps:
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install zip unzip tree
+
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
           path: downloaded_kernels
+
+
+      - name: List current dir
+        run: tree -a .
 
       - name: Pack kernels
         run: |
@@ -468,10 +475,10 @@ jobs:
             )
           done
           echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-          echo "KERNEL_BUILD_LIST=$(printf "%s " ./packed_kernels/*)" >> $GITHUB_ENV
+          echo "KERNEL_BUILD_LIST=$(printf '%s ' ./packed_kernels/*)" >> $GITHUB_ENV
 
-      - name: Test list
-        run: echo ${{ env.KERNEL_BUILD_LIST }}
+      - name: List current dir
+        run: tree -a .
 
       - name: Telegram File Uploader
         uses: xz-dev/TelegramFileUploader@v1.1.1
