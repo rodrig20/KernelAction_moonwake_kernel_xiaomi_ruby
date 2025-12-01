@@ -12,7 +12,7 @@ on:
         type: choice
         default: "nightly"
         options:
-          - production
+          - release
           - nightly
       config_file:
         description: "Path to a specific config JSON file (optional). Leave blank to use all configs."
@@ -433,6 +433,7 @@ jobs:
           fi
 
       - name: "Export version and hash"
+        working-directory: ${{ env.KERNEL_NAME }}
         run: |
           echo "KERNEL_VERSION_LATEST=$(git ls-remote --tags origin | awk -F'/' '{print $3}' | sort -V | tail -n 1)" >> $GITHUB_ENV
           echo "KERNEL_VERSION_HASH=$(git rev-parse --short=7 HEAD)" >> $GITHUB_ENV

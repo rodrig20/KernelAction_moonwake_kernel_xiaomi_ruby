@@ -3,7 +3,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "moonwake-experimental-vanilla",
+      "name": "MoonWake-Vanilla",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/debug.config vendor/bbr.config vendor/noop.config vendor/lru.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
@@ -37,7 +37,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O3",
+      "KCFLAGS": "-O3 -march=armv8.2-a+crypto+fp16+dotprod -mcpu=cortex-a78 -mtune=cortex-a78",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -70,7 +70,7 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "moonwake-experimental-ksun",
+      "name": "MoonWake-KSUN",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/debug.config vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config vendor/susfs.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
@@ -103,7 +103,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O3",
+      "KCFLAGS": "-O3   -march=armv8.2-a+crypto+fp16+dotprod -mcpu=cortex-a78 -mtune=cortex-a78",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
@@ -136,11 +136,11 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "moonwake-experimental-sukisu",
+      "name": "MoonWake-SukiSU",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/debug.config vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config vendor/susfs.config vendor/kernelpatch.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
-      "branch": "experimental"
+      "branch": "temp-exp"
     },
     "output_image": "Image.gz-dtb",
     "telegram_message": "",
@@ -151,8 +151,8 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/DeepinRain/SukiSU-Ultra/susfs/kernel/setup.sh",
-      "setupArg": "susfs",
+      "setupLink": "https://raw.githubusercontent.com/DR-KernelArchive/SukiSU-Ultra/main/kernel/setup.sh",
+      "setupArg": "sukisu-3.2.0-susfs-main",
       "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
@@ -169,7 +169,7 @@
     "params": {
       "ARCH": "arm64",
       "CC": "clang-AOSP/bin/clang",
-      "KCFLAGS": "-O3",
+      "KCFLAGS": "-O3 -march=armv8.2-a+crypto+fp16+dotprod -mcpu=cortex-a78 -mtune=cortex-a78",
       "build_out": "Image.gz-dtb",
       "externalCommand": {
         "KBUILD_BUILD_HOST": "perfc.org",
