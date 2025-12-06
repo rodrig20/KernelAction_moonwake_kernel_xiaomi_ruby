@@ -85,10 +85,10 @@
       "kpimg_link": ""
     },
     "kernelsu": {
-      "enable": false,
-      "setupLink": "",
-      "setupArg": "",
-      "setupName": "",
+      "enable": true,
+      "setupLink": "https://raw.githubusercontent.com/DR-KernelArchive/KernelSU-Next/refs/heads/next/kernel/setup.sh",
+      "setupArg": "next",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
@@ -152,10 +152,10 @@
       "kpimg_link": ""
     },
     "kernelsu": {
-      "enable": false,
-      "setupLink": "",
-      "setupArg": "",
-      "setupName": "",
+      "enable": true,
+      "setupLink": "https://raw.githubusercontent.com/DR-KernelArchive/KernelSU-Next/refs/heads/next/kernel/setup.sh",
+      "setupArg": "next",
+      "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
     },
