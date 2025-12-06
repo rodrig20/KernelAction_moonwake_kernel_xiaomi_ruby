@@ -11,7 +11,7 @@
     },
     "output_image": "Image.gz",
     "telegram_message": "",
-    "additional_script_link": "https://github.com/DeepinRain/MoonWake-CI/raw/main/scripts/hos3-exp-version.sh",
+    "additional_script_link": "https://github.com/DeepinRain/MoonWake-CI/raw/main/scripts/hypermoon-exp-version.sh",
     "additional_post_script_link": "disabled",
     "kp": {
       "use": false,
@@ -78,7 +78,7 @@
     },
     "output_image": "Image.gz",
     "telegram_message": "",
-    "additional_script_link": "https://github.com/DeepinRain/MoonWake-CI/raw/main/scripts/hos3-exp-version.sh",
+    "additional_script_link": "https://github.com/DeepinRain/MoonWake-CI/raw/main/scripts/hypermoon-exp-version.sh",
     "additional_post_script_link": "disabled",
     "kp": {
       "use": false,
@@ -145,7 +145,7 @@
     },
     "output_image": "Image.gz",
     "telegram_message": "",
-    "additional_script_link": "https://github.com/DeepinRain/MoonWake-CI/raw/main/scripts/hos3-exp-version.sh",
+    "additional_script_link": "https://github.com/DeepinRain/MoonWake-CI/raw/main/scripts/hypermoon-exp-version.sh",
     "additional_post_script_link": "disabled",
     "kp": {
       "use": false,
