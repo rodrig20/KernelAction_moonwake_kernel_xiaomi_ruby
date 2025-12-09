@@ -499,7 +499,7 @@ jobs:
             #Nightly #MoonWake
 
             ⚙️ **Build Infomation:**
-            - **Config file:** [${{ github.event.inputs.config_file }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }}/configs/${{ github.event.inputs.config_file }})
+            - **Config file:** [${{ github.event.inputs.config_file }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }}/configs/${{ github.event.inputs.config_type }}/${{ github.event.inputs.config_file }})
             - **Build type:** `${{ github.event.inputs.config_type }}`
 
             📊 **Workflow Infomations:**
