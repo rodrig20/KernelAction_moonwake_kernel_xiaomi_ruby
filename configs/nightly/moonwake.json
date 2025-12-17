@@ -69,11 +69,11 @@
     "kernelSource": {
       "device": "ruby",
       "vendor": "xiaomi",
-      "name": "MoonWake-KSUN",
+      "name": "MoonWake-KSU",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/debug.config vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config vendor/susfs.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
-      "branch": "experimental-ksu-1.0"
+      "branch": "experimental"
     },
     "output_image": "Image.gz-dtb",
     "additional_script_link": "https://github.com/DeepinRain/MoonWake-CI/raw/main/scripts/exp-version.sh",
@@ -83,8 +83,8 @@
     },
     "kernelsu": {
       "enable": true,
-      "setupLink": "https://raw.githubusercontent.com/DR-KernelArchive/KernelSU-Next/refs/heads/next/kernel/setup.sh",
-      "setupArg": "next",
+      "setupLink": "https://github.com/DR-KernelArchive/KernelSU-Unified/raw/susfs/kernel/setup.sh",
+      "setupArg": "susfs",
       "setupName": "KernelSU-Next",
       "needPatch": false,
       "susfsLink": ""
@@ -138,7 +138,7 @@
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/debug.config vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config vendor/susfs.config vendor/kernelpatch.config",
       "repo": "https://github.com/RainyXeon/moonwake_kernel_xiaomi_ruby",
-      "branch": "experimental-ksu-1.0"
+      "branch": "experimental"
     },
     "output_image": "Image.gz-dtb",
     "additional_script_link": "https://github.com/DeepinRain/MoonWake-CI/raw/main/scripts/exp-version.sh",
@@ -149,7 +149,7 @@
     "kernelsu": {
       "enable": true,
       "setupLink": "https://raw.githubusercontent.com/DR-KernelArchive/SukiSU-Ultra/main/kernel/setup.sh",
-      "setupArg": "susfs-1.5.12",
+      "setupArg": "susfs-main",
       "setupName": "KernelSU",
       "needPatch": false,
       "susfsLink": ""
