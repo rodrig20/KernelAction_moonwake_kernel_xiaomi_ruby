@@ -32,14 +32,6 @@ on:
         options:
           - "true"
           - "false"
-      send_to_telegram:
-        description: "Whatever send to telegram ci channel or not"
-        required: true
-        type: choice
-        default: "true"
-        options:
-          - "true"
-          - "false"
 
 permissions:
   contents: write
@@ -496,35 +488,6 @@ jobs:
           printf "%s\n" ./packed_kernels/* >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
 
-      - name: Telegram File Uploader
-        uses: xz-dev/TelegramFileUploader@v1.1.1
-        if: ${{ always() && github.event.inputs.send_to_telegram == 'true' }}
-        with:
-          to-who: '${{ secrets.TELEGRAM_API_TO_WHO }}'
-          message: |
-            #Nightly #MoonWake
-
-            ⚙️ **Build Infomation:**
-            - **Config file:** [${{ github.event.inputs.config_file }}](${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }}/configs/${{ github.event.inputs.config_type }}/${{ github.event.inputs.config_file }})
-            - **Build type:** `${{ github.event.inputs.config_type }}`
-
-            📊 **Workflow Infomations:**
-            - **Attempt:** `${{ github.run_attempt }}`
-            - **Run Number:** `#${{ github.run_number }}`
-            - **Run ID:** `${{ github.run_id }}`
-            - **Actor:** `${{ github.actor }}`
-            - **Workflow SHA:** `${{ github.sha }}`
-            - **Workflow Link:** [click here](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-
-            📄 **Notes:**
-            - You're RESPONSIBLE for EVERY DAMAGE, if you flash this ${{ github.event.inputs.config_type }} build.
-            - [Step to flash MoonWake in AOSP](https://github.com/DPR-MoonWake/moonwake_kernel_xiaomi_ruby/wiki/Flash-MoonWake-on-AOSP)
-            - [Step to flash MoonWake in HyperOS/MIUI](https://github.com/DPR-MoonWake/moonwake_kernel_xiaomi_ruby/wiki/Flash-MoonWake-on-MIUI-HyperOS)
-          files: ${{ env.KERNEL_BUILD_LIST }}
-        env:
-          API_ID: ${{ secrets.TELEGRAM_API_ID }}
-          API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
-          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
       - name: Publish Artifact
         uses: actions/upload-artifact@v4
