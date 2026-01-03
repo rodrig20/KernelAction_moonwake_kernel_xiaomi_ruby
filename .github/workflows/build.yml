@@ -6,6 +6,11 @@ env:
 on:
   workflow_dispatch:
     inputs:
+      kernel_branch:
+        description: "Branch to use for kernel source (defaults to 'moon')"
+        required: false
+        default: "moon"
+        type: string
       config_type:
         description: "Choose a config type"
         required: true
@@ -131,6 +136,7 @@ jobs:
       KERNEL_NAME: ${{ matrix.repos.kernelSource.name }}
       KERNEL_REPO: ${{ matrix.repos.kernelSource.repo }}
       KERNEL_BRANCH: ${{ matrix.repos.kernelSource.branch }}
+      KERNEL_BRANCH_TO_USE: ${{ github.event.inputs.kernel_branch != '' && github.event.inputs.kernel_branch || matrix.repos.kernelSource.branch }}
       KERNEL_DEVICE: ${{ matrix.repos.kernelSource.device }}
       KERNEL_DEVICE_VENDOR: ${{ matrix.repos.kernelSource.vendor }}
 
@@ -193,9 +199,10 @@ jobs:
           echo "Setup Anykernel3 => ($ANYKERNEL_REPO)"
       - name: "Clone kernel source => (${{ env.KERNEL_REPO }})"
         run: |
-          git clone --recursive --depth=1 -j $(nproc) --branch $KERNEL_BRANCH $KERNEL_REPO $KERNEL_NAME
+          git clone --recursive --depth=1 -j $(nproc) --branch $KERNEL_BRANCH_TO_USE $KERNEL_REPO $KERNEL_NAME
           echo -e "\n ! Kernel is at commit: $(git -C $KERNEL_NAME rev-parse HEAD)\n"
           echo "Clone kernel source => ($KERNEL_REPO)"
+          echo "Using branch: $KERNEL_BRANCH_TO_USE"
           echo "KERNEL_COMMIT_HASH=$(git -C $KERNEL_NAME rev-parse HEAD)" >> $GITHUB_OUTPUT
           echo "KERNEL_COMMIT_HASH=$(git -C $KERNEL_NAME rev-parse HEAD)" >> $GITHUB_OUTPUT
       - name: "Get toolchains"
