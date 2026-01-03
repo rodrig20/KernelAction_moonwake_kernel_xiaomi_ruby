@@ -6,11 +6,11 @@
       "name": "MoonWake-CI-Vanilla",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/lz4kd.config vendor/bbr.config vendor/noop.config",
-      "repo": "https://github.com/DPR-MoonWake/moonwake_kernel_xiaomi_ruby",
+      "repo": "https://github.com/rodrig20/moonwake_kernel_xiaomi_ruby",
       "branch": "experimental"
     },
     "output_image": "Image.gz-dtb",
-    "additional_script_link": "https://github.com/DPR-MoonWake/KernelAction/raw/main/scripts/exp-version.sh",
+    "additional_script_link": "https://github.com/rodrig20/KernelAction_moonwake_kernel_xiaomi_ruby/raw/main/scripts/exp-version.sh",
     "additional_post_script_link": "disabled",
     "kp": {
       "use": false,
@@ -72,11 +72,11 @@
       "name": "MoonWake-CI-KSU",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/lz4kd.config vendor/bbr.config vendor/noop.config vendor/kernelsu.config vendor/susfs.config",
-      "repo": "https://github.com/DPR-MoonWake/moonwake_kernel_xiaomi_ruby",
+      "repo": "https://github.com/rodrig20/moonwake_kernel_xiaomi_ruby",
       "branch": "experimental"
     },
     "output_image": "Image.gz-dtb",
-    "additional_script_link": "https://github.com/DPR-MoonWake/KernelAction/raw/main/scripts/exp-version.sh",
+    "additional_script_link": "https://github.com/rodrig20/KernelAction_moonwake_kernel_xiaomi_ruby/raw/main/scripts/exp-version.sh",
     "kp": {
       "use": false,
       "kpimg_link": ""
@@ -137,11 +137,11 @@
       "name": "MoonWake-CI-DEBUG",
       "defconfig": "ruby_defconfig",
       "extraConfig": "vendor/debug.config vendor/lz4kd.config vendor/bbr.config vendor/noop.config vendor/lru.config vendor/kernelsu.config vendor/susfs.config",
-      "repo": "https://github.com/DPR-MoonWake/moonwake_kernel_xiaomi_ruby",
+      "repo": "https://github.com/rodrig20/moonwake_kernel_xiaomi_ruby",
       "branch": "experimental"
     },
     "output_image": "Image.gz-dtb",
-    "additional_script_link": "https://github.com/DPR-MoonWake/KernelAction/raw/main/scripts/exp-version.sh",
+    "additional_script_link": "https://github.com/rodrig20/KernelAction_moonwake_kernel_xiaomi_ruby/raw/main/scripts/exp-version.sh",
     "kp": {
       "use": false,
       "kpimg_link": ""
